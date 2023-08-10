@@ -165,8 +165,8 @@ body {
 .pop-up {
   position: absolute;
   left: 28vw;
-  top: 30vh;
-  height: 35vh;
+  top: 25vh;
+  height: 40vh;
   width: 45vw;
   background-color: gray;
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
@@ -177,6 +177,11 @@ body {
   justify-content: center;
   align-items: center;
   text-align: center;
+  padding: 1rem;
+  visibility: visible;
+}
+.pop-up-h3 {
+  text-transform: uppercase;
   padding: 1rem;
 }
 .pop-up-button {

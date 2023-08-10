@@ -71,6 +71,10 @@ const diceFace = [one, two, three, four, five, six]
 
 
 // ------------------------Event
+document.addEventListener('DOMContentLoaded', () => {
+    popUp.style.visibility = 'visible'
+  });
+
 button.addEventListener('click', () => {
     popUp.style.visibility = 'hidden'
 })
@@ -168,7 +172,7 @@ function changePlayer() {
                 element.classList.remove('opacity-change')
             });
     }
-    if (Number(globalScore[player].textContent) >= 10) {
+    if (Number(globalScore[player].textContent) >= 100) {
         let textChange = document.querySelector('.pop-up p')
         textChange.textContent = `Joueur ${player + 1} à gagner la partie`
         popUp.style.visibility = 'visible'
