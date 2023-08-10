@@ -31,7 +31,7 @@ body {
     justify-content: space-around;
     align-items: start;
     width: 75vw;
-    height: 45vh;
+    height: 15vh;
 
     &__score {
         font-size: 6rem;
@@ -120,3 +120,39 @@ body {
         font-size: 1.2rem;
     }
 }
+
+.hide-player0 {
+    position: absolute;
+    top: 0;
+    left: 57vw;
+    height: 100vh;
+    width: 43vw;
+    background-color: rgba(0, 0, 0, 0.2);
+    transition: left 0.5s ease-in-out;
+}
+
+.hide-player1 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 43vw;
+    background-color: rgba(0, 0, 0, 0.2);
+    transition: left 0.5s ease-in-out;
+}
+
+.container__current-dice{
+    height: 35vh;
+}
+    .current-dice {
+        height: 6vh;
+        width: 6vh;
+        font-size: 3rem;
+        font-weight: 600;
+        color: white;
+        background-color: $primary-color;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }

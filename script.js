@@ -2,13 +2,21 @@
 
 let iterations = 9
 let diceValue
+let player = 0
 
-const currentScore = document.querySelector('.current__score-player')
-const globalScore = document.querySelector('[data-js="score-player-one"]')
+// hide player
+const hidePlayer = document.querySelector('[data-js="hide-player"]')
 
+// score selector
+const currentScore = document.querySelectorAll('.current__score-player')
+const globalScore = document.querySelectorAll('.container__score')
+
+// button action
 const rollDice = document.querySelector('[data-js="roll-dice"]')
 const hold = document.querySelector('[data-js="hold"]')
 
+// dice dot table
+const currentDice = document.querySelector('.current-dice')
 const one = document.querySelector('[data-js="middle"]')
 
 const two = [
@@ -49,27 +57,38 @@ const six = [
 const diceFace = [one, two, three, four, five, six]
 // -------------------------End variable
 
+
 // ------------------------Event
+
 rollDice.addEventListener('click', () => {
     iterations = 9
     diceRoll()
     setTimeout (() => {
         if (diceValue != 1) {
-            let actualScore = Number(currentScore.textContent)
-            currentScore.textContent = addScore(actualScore, diceValue) 
-        } else {currentScore.textContent = 0}
+            let actualScore = Number(currentScore[player].textContent)
+            currentScore[player].textContent = addScore(actualScore, diceValue)
+            currentDice.textContent = diceValue
+        } else {
+            currentScore[player].textContent = 0
+            currentDice.textContent = diceValue
+            changePlayer()
+        }
     }, 1100)
 })
 
 hold.addEventListener('click', () => {
-    let gScore = Number(globalScore.textContent)
-    let actualScore = Number(currentScore.textContent)
-    globalScore.textContent = addScore(gScore, actualScore)
+    let gScore = Number(globalScore[player].textContent)
+    let actualScore = Number(currentScore[player].textContent)
+    globalScore[player].textContent = addScore(gScore, actualScore)
+    currentScore[player].textContent = 0
+    changePlayer()
 })
 // ------------------------End event
 
 
+
 // -----------------------Functions
+
 function aleatoire(min, max) {
  return Math.floor(Math.random() * (max - min + 1)) + min;
 }
@@ -100,4 +119,19 @@ function diceRoll() {
 
 function addScore(scoreOne, scoreTwo) {
     return scoreOne + scoreTwo
+}
+
+function changePlayer() {
+    setTimeout(() => {
+        if (player == 0) {
+            player = 1
+        } else {player = 0}
+    },500)
+    if (player == 0) {
+        hidePlayer.classList.remove('hide-player0')
+        hidePlayer.classList.add('hide-player1')
+    } else {
+        hidePlayer.classList.remove('hide-player1')
+        hidePlayer.classList.add('hide-player0')
+    }
 }

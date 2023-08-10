@@ -16,7 +16,7 @@
             <h1 class="player__global-title">Joueur 2</h1>
     </div>
     <div class="container">
-        <div class="container__score" data-js="score-player-one"></div>
+        <div class="container__score">0</div>
         <div class="container__dice">
             <div class="container__dice__dot container__dice__dot-one"><span class="red-ball clean" data-js="top-left"></span></div>
             <div class="container__dice__dot container__dice__dot-two"><span class="red-ball clean" data-js="top-right"></span></div>
@@ -26,7 +26,10 @@
             <div class="container__dice__dot container__dice__dot-six"><span class="red-ball clean" data-js="bottom-right"></span></div>
             <div class="container__dice__dot container__dice__dot-seven"><span class="red-ball clean" data-js="middle"></span></div>
         </div>
-        <div class="container__score">72</div>
+        <div class="container__score">0</div>
+    </div>
+    <div class="container__current-dice">
+        <div class="current-dice"></div>
     </div>
     <div class="current">
         <div class="current__score">
@@ -42,6 +45,7 @@
             <span class="current__score-player">0</span>
         </div>
     </div>
+    <div class="hide-player0" data-js="hide-player"></div>
     <script src="https://kit.fontawesome.com/a0d5f723cd.js" crossorigin="anonymous"></script>
     <script src="script.js"></script>
 </body>
