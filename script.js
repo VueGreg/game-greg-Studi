@@ -11,6 +11,10 @@ const hidePlayer = document.querySelector('[data-js="hide-player"]')
 const currentScore = document.querySelectorAll('.current__score-player')
 const globalScore = document.querySelectorAll('.container__score')
 
+//opacity selector
+const opacityPlayer1 = document.querySelectorAll('.opacity__player-one')
+const opacityPlayer2 = document.querySelectorAll('.opacity__player-two')
+
 // button action
 const rollDice = document.querySelector('[data-js="roll-dice"]')
 const hold = document.querySelector('[data-js="hold"]')
@@ -135,9 +139,21 @@ function changePlayer() {
     if (player == 0) {
         hidePlayer.classList.remove('hide-player0')
         hidePlayer.classList.add('hide-player1')
+            opacityPlayer1.forEach(element => {
+                element.classList.add('opacity-change')
+            });
+            opacityPlayer2.forEach(element => {
+                element.classList.remove('opacity-change')
+            });
     } else {
         hidePlayer.classList.remove('hide-player1')
         hidePlayer.classList.add('hide-player0')
+            opacityPlayer2.forEach(element => {
+                element.classList.add('opacity-change')
+            });
+            opacityPlayer1.forEach(element => {
+                element.classList.remove('opacity-change')
+            });
     }
 }
 
@@ -153,4 +169,10 @@ function resetAll() {
     hidePlayer.classList.add('hide-player0')
     currentDice.textContent = ""
     clean('.clean')
+    opacityPlayer2.forEach(element => {
+        element.classList.add('opacity-change')
+    });
+    opacityPlayer1.forEach(element => {
+        element.classList.remove('opacity-change')
+    });
 }

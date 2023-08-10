@@ -12,11 +12,11 @@
 <body>
     <div class="new-game"><i class="fa-solid fa-circle-plus" style="color: #eb4d4c;"></i> NEW GAME</div>
     <div class="players">
-            <h1 class="player__global-title">Joueur 1</h1>
-            <h1 class="player__global-title">Joueur 2</h1>
+            <h1 class="player__global-title opacity__player-one">Joueur 1</h1>
+            <h1 class="player__global-title opacity__player-two opacity-change">Joueur 2</h1>
     </div>
     <div class="container">
-        <div class="container__score">0</div>
+        <div class="container__score opacity__player-one">0</div>
         <div class="container__dice">
             <div class="container__dice__dot container__dice__dot-one"><span class="red-ball clean" data-js="top-left"></span></div>
             <div class="container__dice__dot container__dice__dot-two"><span class="red-ball clean" data-js="top-right"></span></div>
@@ -26,13 +26,13 @@
             <div class="container__dice__dot container__dice__dot-six"><span class="red-ball clean" data-js="bottom-right"></span></div>
             <div class="container__dice__dot container__dice__dot-seven"><span class="red-ball clean" data-js="middle"></span></div>
         </div>
-        <div class="container__score">0</div>
+        <div class="container__score opacity__player-two opacity-change">0</div>
     </div>
     <div class="container__current-dice">
         <div class="current-dice"></div>
     </div>
     <div class="current">
-        <div class="current__score">
+        <div class="current__score opacity__player-one">
             <span>current</span>
             <span class="current__score-player">0</span>
         </div>
@@ -40,7 +40,7 @@
             <div><span data-js="roll-dice"><i class="fa-solid fa-rotate" style="color: #eb4d4c;"></i> ROLL DICE</span></div>
             <div><span data-js="hold"><i class="fa-solid fa-arrow-right-from-bracket fa-rotate-90" style="color: #eb4d4c;"></i> HOLD</span></div>
         </div>
-        <div class="current__score">
+        <div class="current__score opacity__player-two opacity-change">
             <span>current</span>
             <span class="current__score-player">0</span>
         </div>
