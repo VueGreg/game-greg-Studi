@@ -49,6 +49,7 @@ body {
             display: flex;
             justify-content: center;
             align-items: center;
+            visibility: hidden;
 
             &-one{
                 grid-column: 1;

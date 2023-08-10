@@ -18,23 +18,23 @@
     <div class="container">
         <div class="container__score">43</div>
         <div class="container__dice">
-            <div class="container__dice__dot container__dice__dot-one"><span class="red-ball"></span></div>
-            <div class="container__dice__dot container__dice__dot-two"><span class="red-ball"></span></div>
-            <div class="container__dice__dot container__dice__dot-three"><span class="red-ball"></span></div>
-            <div class="container__dice__dot container__dice__dot-four"><span class="red-ball"></span></div>
-            <div class="container__dice__dot container__dice__dot-five"><span class="red-ball"></span></div>
-            <div class="container__dice__dot container__dice__dot-six"><span class="red-ball"></span></div>
-            <div class="container__dice__dot container__dice__dot-seven"><span class="red-ball"></span></div>
+            <div class="container__dice__dot container__dice__dot-one"><span class="red-ball clean" data-js="top-left"></span></div>
+            <div class="container__dice__dot container__dice__dot-two"><span class="red-ball clean" data-js="top-right"></span></div>
+            <div class="container__dice__dot container__dice__dot-three"><span class="red-ball clean" data-js="middle-left"></span></div>
+            <div class="container__dice__dot container__dice__dot-four"><span class="red-ball clean" data-js="middle-right"></span></div>
+            <div class="container__dice__dot container__dice__dot-five"><span class="red-ball clean" data-js="bottom-left"></span></div>
+            <div class="container__dice__dot container__dice__dot-six"><span class="red-ball clean" data-js="bottom-right"></span></div>
+            <div class="container__dice__dot container__dice__dot-seven"><span class="red-ball clean" data-js="middle"></span></div>
         </div>
         <div class="container__score">72</div>
     </div>
     <div class="current">
         <div class="current__score">
             <span>current</span>
-            <span class="current__score-player">11</span>
+            <span class="current__score-player">0</span>
         </div>
         <div class="current__group-button">
-            <div><span><i class="fa-solid fa-rotate" style="color: #eb4d4c;"></i> ROLL DICE</span></div>
+            <div><span data-js="roll-dice"><i class="fa-solid fa-rotate" style="color: #eb4d4c;"></i> ROLL DICE</span></div>
             <div><span><i class="fa-solid fa-arrow-right-from-bracket fa-rotate-90" style="color: #eb4d4c;"></i> HOLD</span></div>
         </div>
         <div class="current__score">
@@ -43,5 +43,6 @@
         </div>
     </div>
     <script src="https://kit.fontawesome.com/a0d5f723cd.js" crossorigin="anonymous"></script>
+    <script src="script.js"></script>
 </body>
 </html>
