@@ -14,9 +14,11 @@ const globalScore = document.querySelectorAll('.container__score')
 // button action
 const rollDice = document.querySelector('[data-js="roll-dice"]')
 const hold = document.querySelector('[data-js="hold"]')
+const newGame = document.querySelector('.new-game')
 
 // dice dot table
 const currentDice = document.querySelector('.current-dice')
+
 const one = document.querySelector('[data-js="middle"]')
 
 const two = [
@@ -59,6 +61,9 @@ const diceFace = [one, two, three, four, five, six]
 
 
 // ------------------------Event
+newGame.addEventListener('click', () => {
+    resetAll()
+})
 
 rollDice.addEventListener('click', () => {
     iterations = 9
@@ -134,4 +139,18 @@ function changePlayer() {
         hidePlayer.classList.remove('hide-player1')
         hidePlayer.classList.add('hide-player0')
     }
+}
+
+function resetAll() {
+    currentScore.forEach(element => {
+        element.textContent = 0
+    })
+    globalScore.forEach(element => {
+        element.textContent = 0
+    })
+    player = 0
+    hidePlayer.classList.remove('hide-player1')
+    hidePlayer.classList.add('hide-player0')
+    currentDice.textContent = ""
+    clean('.clean')
 }
