@@ -4,6 +4,12 @@ let iterations = 9
 let diceValue
 let player = 0
 
+// button select
+const button = document.querySelector('.pop-up-button')
+
+//pop-up select
+const popUp = document.querySelector('.pop-up')
+
 // hide player
 const hidePlayer = document.querySelector('[data-js="hide-player"]')
 
@@ -65,33 +71,40 @@ const diceFace = [one, two, three, four, five, six]
 
 
 // ------------------------Event
-newGame.addEventListener('click', () => {
-    resetAll()
+button.addEventListener('click', () => {
+    popUp.style.visibility = 'hidden'
 })
 
-rollDice.addEventListener('click', () => {
-    iterations = 9
-    diceRoll()
-    setTimeout (() => {
-        if (diceValue != 1) {
-            let actualScore = Number(currentScore[player].textContent)
-            currentScore[player].textContent = addScore(actualScore, diceValue)
-            currentDice.textContent = diceValue
-        } else {
-            currentScore[player].textContent = 0
-            currentDice.textContent = diceValue
-            changePlayer()
-        }
-    }, 1100)
-})
+if (popUp.style.visibility = 'hidden') {
+    newGame.addEventListener('click', () => {
+        resetAll()
+    })
+    
+    rollDice.addEventListener('click', () => {
+        iterations = 9
+        diceRoll()
+        setTimeout (() => {
+            if (diceValue != 1) {
+                let actualScore = Number(currentScore[player].textContent)
+                currentScore[player].textContent = addScore(actualScore, diceValue)
+                currentDice.textContent = diceValue
+            } else {
+                currentScore[player].textContent = 0
+                currentDice.textContent = diceValue
+                changePlayer()
+            }
+        }, 1100)
+    })
+    
+    hold.addEventListener('click', () => {
+        let gScore = Number(globalScore[player].textContent)
+        let actualScore = Number(currentScore[player].textContent)
+        globalScore[player].textContent = addScore(gScore, actualScore)
+        currentScore[player].textContent = 0
+        changePlayer()
+    })
+}
 
-hold.addEventListener('click', () => {
-    let gScore = Number(globalScore[player].textContent)
-    let actualScore = Number(currentScore[player].textContent)
-    globalScore[player].textContent = addScore(gScore, actualScore)
-    currentScore[player].textContent = 0
-    changePlayer()
-})
 // ------------------------End event
 
 
@@ -154,6 +167,12 @@ function changePlayer() {
             opacityPlayer1.forEach(element => {
                 element.classList.remove('opacity-change')
             });
+    }
+    if (Number(globalScore[player].textContent) >= 10) {
+        let textChange = document.querySelector('.pop-up p')
+        textChange.textContent = `Joueur ${player + 1} à gagner la partie`
+        popUp.style.visibility = 'visible'
+        resetAll()
     }
 }
 

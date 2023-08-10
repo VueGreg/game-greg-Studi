@@ -166,3 +166,34 @@ body {
 .pointer {
     cursor: pointer;
 }
+
+.pop-up {
+    position: absolute;
+    left: 28vw;
+    top: 30vh;
+    height: 35vh;
+    width: 45vw;
+    background-color: gray;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    color: aliceblue;
+    text-transform: lowercase;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 1rem;
+
+    &-button {
+        padding: 1rem;
+        margin: 1rem;
+        border: none;
+        background-color: $primary-color;
+        color: aliceblue;
+        cursor: pointer;
+
+        &:hover {
+            background-color: lighten( $primary-color, 10%);
+        }
+    }
+}
