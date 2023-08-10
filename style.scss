@@ -10,6 +10,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+    text-transform: uppercase;
 }
 .new-game {
     height: 20vh;
@@ -17,13 +18,13 @@ body {
     justify-content: center;
     align-items: center;
     font-size: 1.2rem;
+    cursor: pointer;
 }
 
 .players {
     display: flex;
     justify-content: space-around;
     width: 100vw;
-    text-transform: uppercase;
     height: 5vh;
 }
 .container {
@@ -161,3 +162,7 @@ body {
         justify-content: center;
         align-items: center;
     }
+
+.pointer {
+    cursor: pointer;
+}
